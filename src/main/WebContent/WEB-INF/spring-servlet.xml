@@ -19,15 +19,21 @@
         <property name="suffix" value=".jsp"/>
     </bean>
     <mvc:annotation-driven/>
-    <bean id="service" class="bankManagement.service.impl.FruitServiceImpl"/>
-    <bean id="personService" class="fruitsstall.service.impl.PersonServiceImpl"/>
-    <bean id="personDao" class="fruitsstall.dao.impl.PersonDaoImplJpa"/>
+    <bean id="customerService" class="bankManagement.service.impl.CustomerServiceImpl"/>
+    <bean id="customerDao" class="bankManagement.dao.impl.CustomerDaoImpl"/>
+    <bean id="managerService" class="bankManagement.service.impl.ManagerServiceimpl"/>
+    <bean id="managerDao" class="bankManagement.dao.impl.ManagerDaoImpl"/>
+    <bean id="loanService" class="bankManagement.service.impl.LoanServiceImpl"/>
+    <bean id="loanDao" class="bankManagement.dao.impl.LoanDaoImpl"/>
+    <bean id="addressService" class="bankManagement.service.impl.AddressServiceImpl"/>
+    <bean id="addressDao" class="bankManagement.dao.impl.AddressDaoImpl"/>
+
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
         <property name="dataSource" ref="dataSource"/>
     </bean>
-    <jpa:repositories base-package="fruitsstall.repository" entity-manager-factory-ref="emf"/>
+    <jpa:repositories base-package="bankManagement.repository" entity-manager-factory-ref="emf"/>
     <bean id="emf" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-        <property name="packagesToScan" value="fruitsstall.model"/>
+        <property name="packagesToScan" value="bankManagement.model"/>
         <property name="dataSource" ref="dataSource"/>
         <property name="jpaProperties">
             <props>
