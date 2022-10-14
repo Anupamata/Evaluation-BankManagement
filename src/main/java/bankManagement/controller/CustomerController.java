@@ -30,7 +30,7 @@ public class CustomerController {
         return modelAndView;
     }
     @RequestMapping(value = "/loginResult",method = RequestMethod.POST)
-    public ModelAndView newCustomerFormI(@ModelAttribute("customer") Customer customer) {
+    public ModelAndView newCustomerValidation(@ModelAttribute("customer") Customer customer) {
         Customer customer1=customerService.login(customer.getUsername(),customer.getPassword());
         if(customer1==null)
         {
@@ -48,7 +48,7 @@ public class CustomerController {
         }
     }
     @RequestMapping("/fetchById/{id}")
-    public ModelAndView searchPerson(@PathVariable long  id) {
+    public ModelAndView searchCustomerById(@PathVariable long  id) {
         ModelAndView mav = new ModelAndView("my_details");
         Customer customer = customerService.getPersonById(id);
         mav.addObject("customer", customer);
@@ -58,7 +58,7 @@ public class CustomerController {
     }
 
     @RequestMapping(value="/all", headers = "Accept=application/json")
-    public ModelAndView home() {
+    public ModelAndView ListOfAllCustomers() {
         List<Customer> listCustomer = customerService.fetchAllPerson();
         ModelAndView mav = new ModelAndView("list-of-all");
         mav.addObject("customer", new Customer());
@@ -66,7 +66,7 @@ public class CustomerController {
         return mav;
     }
     @RequestMapping("/edit/{id}")
-    public ModelAndView editCustomerForm(@PathVariable long  id) {
+    public ModelAndView editCustomer(@PathVariable long  id) {
         ModelAndView mav = new ModelAndView("edit_customer");
         Customer customer = customerService.getPersonById(id);
         mav.addObject("customer", customer);
@@ -93,7 +93,7 @@ public class CustomerController {
         return mv;
     }
     @RequestMapping(value = "/withdraw/{id}")
-    public ModelAndView withdraw(@PathVariable long  id) {
+    public ModelAndView withdrawMoney(@PathVariable long  id) {
         ModelAndView mv =  new ModelAndView("withdraw");
         Customer customer = customerService.getPersonById(id);
         mv.addObject("customer", customer);
