@@ -21,7 +21,7 @@
     <mvc:annotation-driven/>
     <bean id="customerService" class="bankManagement.service.impl.CustomerServiceImpl"/>
     <bean id="customerDao" class="bankManagement.dao.impl.CustomerDaoImpl"/>
-    <bean id="managerService" class="bankManagement.service.impl.ManagerServiceimpl"/>
+    <bean id="managerService" class="bankManagement.service.impl.ManagerServiceImpl"/>
     <bean id="managerDao" class="bankManagement.dao.impl.ManagerDaoImpl"/>
     <bean id="loanService" class="bankManagement.service.impl.LoanServiceImpl"/>
     <bean id="loanDao" class="bankManagement.dao.impl.LoanDaoImpl"/>
@@ -53,4 +53,9 @@
         <property name="username" value="root"/>
         <property name="password" value="root"/>
     </bean>
+
+<!--
+    <bean id="CustomerController" class="bankManagement.service.AuthService"/>
+-->
+
 </beans>

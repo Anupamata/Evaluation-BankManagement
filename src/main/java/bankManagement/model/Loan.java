@@ -1,29 +1,27 @@
 package bankManagement.model;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="loan")
 public class Loan {
     @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "loanId")
-    private String loanId;
+    private long loanId;
     @Column (name = "loanName")
     private String loanName;
     @Column (name = "loanAmount")
     private double loanAmount;
     @Column (name = "customerId")
-    private String customerId;
+    private long customerId;
     @Column(name = "status")
     private String status;
 
-    public String getLoanId() {
+    public long getLoanId() {
         return loanId;
     }
 
-    public void setLoanId(String loanId) {
+    public void setLoanId(long loanId) {
         this.loanId = loanId;
     }
 
@@ -39,15 +37,15 @@ public class Loan {
         return loanAmount;
     }
 
-    public void setLoanAmount(int loanAmount) {
+    public void setLoanAmount(double loanAmount) {
         this.loanAmount = loanAmount;
     }
 
-    public String getCustomerId() {
+    public long getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(String customerId) {
+    public void setCustomerId(long   customerId) {
         this.customerId = customerId;
     }
 

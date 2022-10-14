@@ -1,4 +1,4 @@
 package bankManagement.service.impl;
 
-public class ManagerServiceimpl {
+public class ManagerServiceImpl {
 }

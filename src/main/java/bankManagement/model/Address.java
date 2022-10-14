@@ -10,7 +10,7 @@ public class Address {
 
     @Id
     @Column(name = "addressId")
-    private String addressId;
+    private long addressId;
     @Column (name = "houseName")
     private String houseName;
     @Column (name = "city")
@@ -20,11 +20,11 @@ public class Address {
     @Column(name = "pin")
     private int pin;
 
-    public String getAddressId() {
+    public long getAddressId() {
         return addressId;
     }
 
-    public void setAddressId(String addressId) {
+    public void setAddressId(long addressId) {
         this.addressId = addressId;
     }
 

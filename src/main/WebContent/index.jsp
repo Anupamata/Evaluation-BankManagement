@@ -12,7 +12,7 @@
     <div align="center">
     <h3>PERSON MANAGEMENT</h3>
     <table border="0">
-        <form method="get" action="/Evaluation/customer/loginCheck">
+        <form method="get" action="/Evaluation/customer/login">
                 <tr>
                 <td><input type="submit" value="CUSTOMER"/></td>
                 </tr>

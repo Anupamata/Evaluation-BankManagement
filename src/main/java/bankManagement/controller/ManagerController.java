@@ -1,3 +1,4 @@
+/*
 package bankManagement.controller;
 
 import bankManagement.model.Customer;
@@ -14,8 +15,6 @@ import java.util.List;
 public class ManagerController {
     @Autowired
     ManagerService managerService;
-    @RequestMapping(value="/loginCheck", headers = "Accept=application/json")
-    public ModelAndView login() {
-       
-    }
+
 }
+*/

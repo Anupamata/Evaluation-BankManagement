@@ -9,7 +9,7 @@ import javax.persistence.Table;
 public class Manager {
     @Id
     @Column(name = "managerId")
-    private String managerId;
+    private long managerId;
     @Column(name = "managerName")
     private String managerName;
     @Column(name = "username")
@@ -20,14 +20,14 @@ public class Manager {
     @Column(name = "mobile")
     private long mobile;
     @Column(name = "addressId")
-    private String addressId;
+    private long addressId;
 
 
-    public String getManagerId() {
+    public long getManagerId() {
         return managerId;
     }
 
-    public void setManagerId(String managerId) {
+    public void setManagerId(long managerId) {
         this.managerId = managerId;
     }
 
@@ -63,11 +63,11 @@ public class Manager {
         this.mobile = mobile;
     }
 
-    public String getAddressId() {
+    public long getAddressId() {
         return addressId;
     }
 
-    public void setAddressId(String addressId) {
+    public void setAddressId(long addressId) {
         this.addressId = addressId;
     }
 

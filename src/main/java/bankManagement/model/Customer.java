@@ -10,7 +10,7 @@ import javax.persistence.Table;
 public class Customer {
     @Id
     @Column(name = "customerId")
-    private String customerId;
+    private long customerId;
     @Column (name = "custName")
     private String custName;
     @Column (name = "username")
@@ -22,15 +22,15 @@ public class Customer {
     @Column (name = "balance")
     private double balance;
     @Column (name = "addressId")
-    private String  addressId;
+    private long  addressId;
     @Column (name = "gender")
     private String gender;
 
-    public String getCustomerId() {
+    public long getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(String customerId) {
+    public void setCustomerId(long customerId) {
         this.customerId = customerId;
     }
 
@@ -74,11 +74,11 @@ public class Customer {
         this.balance = balance;
     }
 
-    public String getAddressId() {
+    public long getAddressId() {
         return addressId;
     }
 
-    public void setAddressId(String addressId) {
+    public void setAddressId(long addressId) {
         this.addressId = addressId;
     }
 
