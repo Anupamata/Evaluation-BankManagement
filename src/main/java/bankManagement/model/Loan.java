@@ -5,7 +5,7 @@ import javax.persistence.*;
 @Table(name="loan")
 public class Loan {
     @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "loanId")
     private long loanId;
     @Column (name = "loanName")

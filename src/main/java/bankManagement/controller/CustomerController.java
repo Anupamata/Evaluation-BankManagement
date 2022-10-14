@@ -115,8 +115,6 @@ public class CustomerController {
         Customer customer = customerService.getPersonById(id);
         modelAndView.addObject("customer", customer);
         return modelAndView;
-
-
     }
     @RequestMapping(value = "/applyNewLoan/{id}")
     public ModelAndView newLoan(@PathVariable long  id) {
@@ -129,10 +127,21 @@ public class CustomerController {
     }
     @RequestMapping(value = "/loanSave", method = RequestMethod.POST)
     public ModelAndView saveLoan(@ModelAttribute("loan") Loan loan) {
-        ModelAndView mv =  new ModelAndView("success_page");
+        ModelAndView mv =  new ModelAndView("loan_success_page");
         loan.setStatus("Pending");
         loanService.insertLoan(loan);
+        mv.addObject("loan",loan);
         return mv;
+    }
+    @RequestMapping(value = "/statusOfLoan/{id}")
+    public ModelAndView statusOfLoan(@PathVariable long  id) {
+        ModelAndView modelAndView = new ModelAndView("loanDetailsOneCustomer");
+        List<Loan> loanList=loanService.getByCustomerId(id);
+        modelAndView.addObject("loan", new Loan());
+        modelAndView.addObject("loanList",loanList);
+        return modelAndView;
+
+
     }
 
 }

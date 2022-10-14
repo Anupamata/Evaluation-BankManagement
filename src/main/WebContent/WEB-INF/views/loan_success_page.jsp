@@ -6,35 +6,39 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>New Customer</title>
 </head>
 <body>
     <div align="center">
-        <h2>Add New Loan</h2>
-        <form:form action="/Evaluation/customer/loanSave" method="post" modelAttribute="loan">
+        <h2>Loan Details</h2>
+        <form:form  method="post" modelAttribute="loan">
             <table border="0" cellpadding="5">
-               
+                <tr>
+                    <td>ID: </td>
+                    <td>${loan.loanId}
+                        <form:hidden path="loanId"/>
+                    </td>
+                </tr>
                 <tr>
                     <td>Loan Name: </td>
-                    <td><form:input path="loanName" /></td>
+                    <td>${loan.loanName}</td>
                 </tr>
                 <tr>
-                    <td>amount: </td>
-                    <td><form:input path="loanAmount" /></td>
+                    <td>Loan Amount: </td>
+                    <td>${loan.loanAmount}</td>
                 </tr>
-
                 <tr>
-                    <td>CustomerId: </td>
+                    <td>Customer ID: </td>
                     <td>${loan.customerId}</td>
-                    <form:hidden path="customerId"/>
                 </tr>
 
-                <tr>
-                    <td colspan="2"><input type="submit" value="Save"></td>
-                </tr>
+                 <tr>
+                     <td>Status: </td>
+                     <td>${loan.status}</td>
+                 </tr>
             </table>
-                     </br><a href="http://localhost:8089/FruitStall/"><i>HOME</a></i>
+
         </form:form>
     </div>
+     </br><a href="http://localhost:8080/Evaluation/customer/loginResult"><i>HOME</a></i>
 </body>
 </html>

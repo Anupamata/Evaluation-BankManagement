@@ -10,10 +10,10 @@
 </head>
 <body>
     <div align="center">
-        <h2>Withdraw</h2>
+        <h2>Withdraw Form</h2>
 
-your balance is : ${customer.balance}</BR>
-            Enter amount to withdraw : <input type="text" id="amount">
+your balance is : ${customer.balance}</br><br>
+            Enter amount to withdraw : <input type="text" id="amount"><br>
             </br><button onclick='window.location ="/Evaluation/customer/withdrawResult/${customer.customerId}/"+document.getElementById("amount").value'>OK </button>
 
 

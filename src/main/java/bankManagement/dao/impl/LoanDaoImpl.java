@@ -6,6 +6,7 @@ import bankManagement.repository.LoanRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 public class LoanDaoImpl implements LoanDao {
     @Autowired
@@ -13,5 +14,10 @@ public class LoanDaoImpl implements LoanDao {
     @Transactional
     public void  insertLoan(Loan loan) {
         loanRepository.save(loan);
+    }
+
+    @Override
+    public List<Loan> getByCustomerId(long id) {
+        return loanRepository.getByCustomerId(id);
     }
 }
