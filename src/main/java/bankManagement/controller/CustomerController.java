@@ -25,7 +25,7 @@ public class CustomerController {
 
     @RequestMapping(value = "/login",method = RequestMethod.GET)
     public ModelAndView newCustomerForm() {
-        ModelAndView modelAndView =  new ModelAndView("customerLogin");
+        ModelAndView modelAndView =  new ModelAndView("customer_login");
         modelAndView.addObject("customer" , new Customer());
         return modelAndView;
     }
@@ -41,7 +41,7 @@ public class CustomerController {
         else
         {
 
-            ModelAndView modelAndView =  new ModelAndView("success");
+            ModelAndView modelAndView =  new ModelAndView("services_of_Customer");
             modelAndView.addObject("customer" , customer1);
             return modelAndView;
 
@@ -49,7 +49,7 @@ public class CustomerController {
     }
     @RequestMapping("/fetchById/{id}")
     public ModelAndView searchCustomerById(@PathVariable long  id) {
-        ModelAndView mav = new ModelAndView("my_details");
+        ModelAndView mav = new ModelAndView("single_customer_details");
         Customer customer = customerService.getPersonById(id);
         mav.addObject("customer", customer);
         Address address = addressService.getAddressById(customer.getAddressId());
@@ -60,7 +60,7 @@ public class CustomerController {
     @RequestMapping(value="/all", headers = "Accept=application/json")
     public ModelAndView ListOfAllCustomers() {
         List<Customer> listCustomer = customerService.fetchAllPerson();
-        ModelAndView mav = new ModelAndView("list-of-all");
+        ModelAndView mav = new ModelAndView("list_of_all_customers");
         mav.addObject("customer", new Customer());
         mav.addObject("allPersons", listCustomer);
         return mav;
@@ -94,14 +94,14 @@ public class CustomerController {
     }
     @RequestMapping(value = "/withdraw/{id}")
     public ModelAndView withdrawMoney(@PathVariable long  id) {
-        ModelAndView mv =  new ModelAndView("withdraw");
+        ModelAndView mv =  new ModelAndView("withdraw_home");
         Customer customer = customerService.getPersonById(id);
         mv.addObject("customer", customer);
         return mv;
     }
     @RequestMapping(value = "/withdrawResult/{id}/{amount}", method = RequestMethod.GET)
     public ModelAndView withdrawResult(@PathVariable long id,@PathVariable double  amount) {
-        ModelAndView mv =  new ModelAndView("updatedBalance");
+        ModelAndView mv =  new ModelAndView("updated_balance");
         Customer customer = customerService.getPersonById(id);
         double newAmount=(customer.getBalance())-amount;
         customer.setBalance(newAmount);
@@ -111,7 +111,7 @@ public class CustomerController {
     }
     @RequestMapping(value = "/loanHome/{id}")
     public ModelAndView loanHome(@PathVariable long  id) {
-        ModelAndView modelAndView = new ModelAndView("loanHome");
+        ModelAndView modelAndView = new ModelAndView("loan_Home");
         Customer customer = customerService.getPersonById(id);
         modelAndView.addObject("customer", customer);
         return modelAndView;
@@ -135,7 +135,7 @@ public class CustomerController {
     }
     @RequestMapping(value = "/statusOfLoan/{id}")
     public ModelAndView statusOfLoan(@PathVariable long  id) {
-        ModelAndView modelAndView = new ModelAndView("loanDetailsOneCustomer");
+        ModelAndView modelAndView = new ModelAndView("loan_Details_One_Customer");
         List<Loan> loanList=loanService.getByCustomerId(id);
         modelAndView.addObject("loan", new Loan());
         modelAndView.addObject("loanList",loanList);

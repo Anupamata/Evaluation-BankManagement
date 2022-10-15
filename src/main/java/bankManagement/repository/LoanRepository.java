@@ -8,6 +8,6 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface LoanRepository extends JpaRepository<Loan, Long> {
-    @Query("select loan from Loan loan where loan.customerId=:id")
+    @Query("select loan from Loan loan where loan.customerId=:customerId")
     List<Loan> getByCustomerId(@Param("customerId") long id);
 }

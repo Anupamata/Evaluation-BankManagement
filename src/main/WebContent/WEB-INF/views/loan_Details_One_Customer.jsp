@@ -16,7 +16,6 @@
                 <th>ID</th>
                 <th>Loan Name</th>
                 <th>Loan Amount</th>
-                <th>CustomerId</th>
                 <th>Status No</th>
             </tr>
             <c:forEach items="${loanList}" var="loan">
@@ -24,7 +23,6 @@
                 <td>${loan.loanId}</td>
                 <td>${loan.loanName}</td>
                 <td>${loan.loanAmount}</td>
-                <td>${loan.customerId}</td>
                 <td>${loan.status}</td>
                             </tr>
             </c:forEach>
