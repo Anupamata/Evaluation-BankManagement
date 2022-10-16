@@ -11,13 +11,11 @@
 <body>
     <div align="center">
         <h2>Add New Person</h2>
-        <form:form action="save" method="post" modelAttribute="customer">
+        <form:form action="saveNewCustomer/${customer.addressId}" method="post" modelAttribute="customer">
             <table border="0" cellpadding="5">
+
                 <tr>
-                    <td>Id: </td>
-                    <td><form:input path="customerId" /></td>
-                </tr>
-                <tr>
+                <form:hidden path="customerId" />
                     <td>Name: </td>
                     <td><form:input path="custName" /></td>
                 </tr>

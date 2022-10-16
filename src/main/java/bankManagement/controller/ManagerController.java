@@ -93,15 +93,32 @@ public class ManagerController {
     }*/
     @RequestMapping("/newCustomer")
     public ModelAndView newCustomerForm() {
-        ModelAndView modelAndView =  new ModelAndView("new_customer_demo");
-        Address address=new Address();
+        ModelAndView modelAndView =  new ModelAndView("new_customer_add");
         Customer customer=new Customer();
+        Address address=new Address();
+        addressService.insertPerson(address);
         customer.setAddressId(address.getAddressId());
         modelAndView.addObject("customer" , customer);
         return modelAndView;
     }
+    @RequestMapping(value = "/saveNewCustomer/{addressId}" , method = RequestMethod.POST)
+    public ModelAndView saveCustomer(@ModelAttribute("customer") Customer customer,@PathVariable long addressId) {
+        ModelAndView mv =  new ModelAndView("address_details_add");
+        customerService.insertPerson(customer);
+        Address address=addressService.getAddressById(addressId);
+        mv.addObject("address" , address);
+        return mv;
+    }
+    @RequestMapping(value = "/saveAddress/{id}", method = RequestMethod.POST)
+    public ModelAndView saveAddress(@ModelAttribute("address") Address address,@PathVariable long id) {
+        ModelAndView mv =  new ModelAndView("new_customer_added");
+        address.setAddressId(id);
+        addressService.insertPerson(address);
+        return mv;
+    }
+
     @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public ModelAndView saveCustomer(@ModelAttribute("customer") Customer customer) {
+    public ModelAndView saveEditedCustomer(@ModelAttribute("customer") Customer customer) {
         ModelAndView mv =  new ModelAndView("success_page");
         customerService.insertPerson(customer);
         return mv;
@@ -138,7 +155,16 @@ public class ManagerController {
         return modelAndView;
     }
 
-//    @RequestMapping(value="/rejectLoan")
+    @RequestMapping(value="/rejectLoan/{loanId}")
+    public ModelAndView rejectLoan(@PathVariable long loanId)
+    {
+        ModelAndView modelAndView=new ModelAndView("loan_reject_msg");
+        Loan loan = loanService.getLoanById(loanId);
+        loan.setStatus("Rejected");
+        loanService.insertLoan(loan);
+        modelAndView.addObject("loan",loan);
+        return modelAndView;
+    }
 
 
 

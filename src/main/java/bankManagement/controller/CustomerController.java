@@ -95,11 +95,20 @@ public class CustomerController {
     public ModelAndView withdrawResult(@PathVariable long id,@PathVariable double  amount) {
         ModelAndView mv =  new ModelAndView("updated_balance");
         Customer customer = customerService.getPersonById(id);
-        double newAmount=(customer.getBalance())-amount;
-        customer.setBalance(newAmount);
-        customerService.insertPerson(customer);
-        mv.addObject("customer", customer);
-        return mv;
+        if(amount<= customer.getBalance()) {
+            double newAmount = (customer.getBalance()) - amount;
+            customer.setBalance(newAmount);
+            customerService.insertPerson(customer);
+            mv.addObject("customer", customer);
+            return mv;
+        }
+        else
+        {
+            ModelAndView modelAndView =  new ModelAndView("exceed_withdraw_amount");
+//            modelAndView.addObject("customer", customer);
+            return modelAndView;
+        }
+
     }
     @RequestMapping(value = "/loanHome/{id}")
     public ModelAndView loanHome(@PathVariable long  id) {
@@ -132,8 +141,6 @@ public class CustomerController {
         modelAndView.addObject("loan", new Loan());
         modelAndView.addObject("loanList",loanList);
         return modelAndView;
-
-
     }
 
 }
