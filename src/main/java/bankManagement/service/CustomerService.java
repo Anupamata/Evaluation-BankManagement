@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface CustomerService {
     List<Customer> fetchAllPerson();
-    public Customer login(String username,String password);
+     Customer login(String username,String password);
     Customer getPersonById(long personId);
     void insertPerson(Customer customer);
 

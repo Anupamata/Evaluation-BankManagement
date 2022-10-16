@@ -10,30 +10,18 @@
     </head>
     <body>
     <div align="center">
-        <h2>Details of all persons</h2>
+        <h2>Details of all Customers</h2>
         <table border="1" cellpadding="5">
             <tr>
                 <th>ID</th>
                 <th>Name</th>
-                <th>Username</th>
-                <th>Password</th>
-                <th>Account No</th>
-                <th>Balance</th>
-                <th>Address Id</th>
-                <th>Gender</th>
-
-
+                <th>See Details</th>
             </tr>
             <c:forEach items="${allPersons}" var="customer">
             <tr>
                 <td>${customer.customerId}</td>
                 <td>${customer.custName}</td>
-                <td>${customer.username}</td>
-                <td>${customer.password}</td>
-                <td>${customer.accNo}</td>
-                <td>${customer.balance}</td>
-                <td>${customer.addressId}</td>
-                <td>${customer.gender}</td>
+                <td><a href="/Evaluation/customer/fetchById/${customer.customerId}">Details</a></td>
 
             </tr>
             </c:forEach>

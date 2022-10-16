@@ -12,13 +12,14 @@
     <center>
     <h2>
     Welcome <i>${customer.custName}</i><br></h2>
-   <form method="get"  action="/Evaluation/customer/fetchById/${customer.customerId}"></br>
-        <input style="height:50px;width:120px" type="submit"  value="View My Details"/></form>
-   <form method="get"  action="/Evaluation/customer/edit/${customer.customerId}"></br>
-        <input style="height:50px;width:120px" type="submit"  value="Edit  My Details"/></form>
-   <form method="get"  action="/Evaluation/customer/withdraw/${customer.customerId}"></br>
-        <input style="height:50px;width:120px" type="submit"  value="Withdraw Money"/></form>
-   <form method="get"  action="/Evaluation/customer/loanHome/${customer.customerId}"></br>
+   <form method="get"  action="/Evaluation/manager/getAllCustomers/${customer.customerId}"></br>
+        <input style="height:50px;width:120px" type="submit"  value="View customers"/></form>
+   <form method="get"  action="/Evaluation/manager/fetchById"></br>
+        <input style="height:50px;width:120px" type="submit"  value="Search Customer"/></form>
+   <form method="get"  action="/Evaluation/manager/newCustomer"></br>
+        <input style="height:50px;width:120px" type="submit"  value="New Customer"/></form>
+
+   <form method="get"  action="/Evaluation/manager/pendingLoan"></br>
         <input style="height:50px;width:120px" type="submit"  value="   Loan Details   "/></form>
 <br><br>
     <a href="http://localhost:8080/Evaluation/customer/login"><i>HOME</i></a>

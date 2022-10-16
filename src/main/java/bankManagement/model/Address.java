@@ -1,14 +1,12 @@
 package bankManagement.model;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="address")
 public class Address {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "addressId")
     private long addressId;
     @Column (name = "houseName")

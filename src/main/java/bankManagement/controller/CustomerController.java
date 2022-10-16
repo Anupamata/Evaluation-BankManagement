@@ -24,17 +24,17 @@ public class CustomerController {
     private LoanService loanService;
 
     @RequestMapping(value = "/login",method = RequestMethod.GET)
-    public ModelAndView newCustomerForm() {
+    public ModelAndView customerLoginForm() {
         ModelAndView modelAndView =  new ModelAndView("customer_login");
         modelAndView.addObject("customer" , new Customer());
         return modelAndView;
     }
     @RequestMapping(value = "/loginResult",method = RequestMethod.POST)
     public ModelAndView newCustomerValidation(@ModelAttribute("customer") Customer customer) {
-        Customer customer1=customerService.login(customer.getUsername(),customer.getPassword());
-        if(customer1==null)
+        Customer newCustomer =customerService.login(customer.getUsername(),customer.getPassword());
+        if(newCustomer ==null)
         {
-            ModelAndView modelAndView =  new ModelAndView("error");
+            ModelAndView modelAndView =  new ModelAndView("customer_error");
             modelAndView.addObject("error" , "login failed");
             return modelAndView;
         }
@@ -42,7 +42,7 @@ public class CustomerController {
         {
 
             ModelAndView modelAndView =  new ModelAndView("services_of_Customer");
-            modelAndView.addObject("customer" , customer1);
+            modelAndView.addObject("customer" , newCustomer);
             return modelAndView;
 
         }
@@ -57,14 +57,6 @@ public class CustomerController {
         return mav;
     }
 
-    @RequestMapping(value="/all", headers = "Accept=application/json")
-    public ModelAndView ListOfAllCustomers() {
-        List<Customer> listCustomer = customerService.fetchAllPerson();
-        ModelAndView mav = new ModelAndView("list_of_all_customers");
-        mav.addObject("customer", new Customer());
-        mav.addObject("allPersons", listCustomer);
-        return mav;
-    }
     @RequestMapping("/edit/{id}")
     public ModelAndView editCustomer(@PathVariable long  id) {
         ModelAndView mav = new ModelAndView("edit_customer");

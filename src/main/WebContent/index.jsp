@@ -10,27 +10,13 @@
     </head>
     <body>
     <div align="center">
-    <h3>PERSON MANAGEMENT</h3>
-    <table border="0">
+    <h2>BANK &nbsp; MANAGEMENT &nbsp;SYSTEM</h2><br>
         <form method="get" action="/Evaluation/customer/login">
-                <tr>
-                <td><input type="submit" value="CUSTOMER"/></td>
-                </tr>
-                <tr></tr>
-                <tr></tr>
-                <tr></tr>
-                <tr></tr>
+            <input style="height:50px;width:120px" type="submit" value="CUSTOMER"/></td><br> <br>
         </form>
-        <form method="get" action="/Evaluation/manager/loginCheck">
-                <tr>
-                <td><input type="submit" value="MANAGER"/></td>
-                </tr>
-                <tr></tr>
-                <tr></tr>
-                <tr></tr>
-                <tr></tr>
+        <form method="get" action="/Evaluation/manager/login">
+            <input style="height:50px;width:120px" type="submit" value="MANAGER"/></td>
         </form>
-
     </div>
    </body>
    </html>
