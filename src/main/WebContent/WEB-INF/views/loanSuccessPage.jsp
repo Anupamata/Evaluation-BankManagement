@@ -36,7 +36,6 @@
                      <td>${loan.status}</td>
                  </tr>
             </table>
-
         </form:form>
          </br><button onclick="history.back()"> Back</button>
     </div>

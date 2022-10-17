@@ -22,8 +22,6 @@
         <input style="height:50px;width:120px" type="submit"  value="   Loan Details   "/></form>
    <form method="get"  action="/Evaluation/"></br>
         <input style="height:50px;width:120px" type="submit"  value="   Log Out   "/></form>
-
-
     </center>
     </body>
     </html>

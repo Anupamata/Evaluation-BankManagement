@@ -9,5 +9,6 @@
     </head>
     <body>
    <h3> New Customer has SUCCESSFULLY added </h3>
+<a href="http://localhost:8080/Evaluation/manager/loginResult" >BACK</a>
     </body>
     </html>

@@ -22,12 +22,10 @@
                 <td>${customer.customerId}</td>
                 <td>${customer.custName}</td>
                 <td><a href="/Evaluation/customer/fetchById/${customer.customerId}">Details</a></td>
-
             </tr>
             </c:forEach>
         </table>
-
-	                     </br><button onclick="history.back()"> Back</button>
+        </br><button onclick="history.back()"> Back</button>
 
     </div>
     </body>

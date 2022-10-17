@@ -56,8 +56,7 @@
             </table>
              <a href="/Evaluation/customer/editAddress?id=${customer.addressId}">Edit Address Details</a>
         </form:form>
-                     </br><button onclick="history.back()"> Back</button>
-
+        </br><button onclick="history.back()"> Back</button>
     </div>
 </body>
 </html>

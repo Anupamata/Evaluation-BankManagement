@@ -28,13 +28,10 @@
                 <td>${loan.status}</td>
                 <td><a href="/Evaluation/manager/approveLoan/${loan.loanId}/${loan.customerId}">Approve</a>&nbsp;
                 <a href="/Evaluation/manager/rejectLoan/${loan.loanId}">Reject</a></td>
-
             </tr>
             </c:forEach>
         </table>
-
-	                     </br><button onclick="history.back()"> Back</button>
-
+	    </br><button onclick="history.back()"> Back</button>
     </div>
     </body>
     </html>

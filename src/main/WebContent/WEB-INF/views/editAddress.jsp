@@ -40,7 +40,7 @@
                     <td colspan="2"><input type="submit" value="Save"></td>
                 </tr>
             </table>
-                                 </br><button onclick="history.back()"> Back</button>
+            </br><button onclick="history.back()"> Back</button>
         </form:form>
          </div>
         </body>

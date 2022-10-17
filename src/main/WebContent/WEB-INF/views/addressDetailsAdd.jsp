@@ -35,14 +35,12 @@
                 <form modelAttribute="customer" >
                 </tr>
                 <tr>
-                    <input style="height:50px;width:120px" type="submit"  value="Save"/>
+                   <td> <input style="height:50px;width:120px" type="submit"  value="Save"/></td>
                 </tr>
             </table>
                 </form>
         </form:form>
-
-                     </br><button onclick="history.back()"> Back</button>
-
+      </br><button onclick="history.back()"> Back</button>
     </div>
 </body>
 </html>
