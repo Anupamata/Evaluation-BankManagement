@@ -6,29 +6,34 @@
     <html>
     <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>Customer Manager</title>
     </head>
     <body>
     <div align="center">
-        <h2>Details of all Applied Loans</h2>
+        <h2>Details of all Pending Loans</h2>
         <table border="1" cellpadding="5">
             <tr>
-                <th>ID</th>
+                <th>Loan ID</th>
                 <th>Loan Name</th>
                 <th>Loan Amount</th>
-                <th>Status No</th>
+                <th>Customer id</th>
+                <th>Status</th>
+                <th>Action</th>
             </tr>
-            <c:forEach items="${loanList}" var="loan">
+            <c:forEach items="${allPendingList}" var="loan">
             <tr>
                 <td>${loan.loanId}</td>
                 <td>${loan.loanName}</td>
                 <td>${loan.loanAmount}</td>
+                <td>${loan.customerId}</td>
                 <td>${loan.status}</td>
-                            </tr>
+                <td><a href="/Evaluation/manager/approveLoan/${loan.loanId}/${loan.customerId}">Approve</a>&nbsp;
+                <a href="/Evaluation/manager/rejectLoan/${loan.loanId}">Reject</a></td>
+
+            </tr>
             </c:forEach>
         </table>
 
-         </br><a href="http://localhost:8089/Evaluation/"><i>HOME</a></i>
+	                     </br><button onclick="history.back()"> Back</button>
 
     </div>
     </body>

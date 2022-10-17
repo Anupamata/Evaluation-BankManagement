@@ -18,6 +18,8 @@
                     <input type="reset" value="Reset"/>&nbsp &nbsp
 	                 <button id="confirm_user" type="submit" >Login</button>
 	        </form>
+	                            <br><button onclick="history.back()"> Back</button>&nbsp &nbsp
 	    </center>
+
 	</body>
 </html>

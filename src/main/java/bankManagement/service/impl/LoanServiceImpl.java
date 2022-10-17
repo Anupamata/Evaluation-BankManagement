@@ -1,7 +1,6 @@
 package bankManagement.service.impl;
 
 import bankManagement.dao.LoanDao;
-import bankManagement.model.Customer;
 import bankManagement.model.Loan;
 import bankManagement.service.LoanService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,12 +17,12 @@ public class LoanServiceImpl implements LoanService {
     }
 
     @Override
-    public List<Loan> getByCustomerId(long id) {
-        return loanDao.getByCustomerId(id);
+    public List<Loan> getLoanByCustomerId(long id) {
+        return loanDao.getLoanByCustomerId(id);
     }
     @Override
-    public List<Loan> fetchAllPerson() {
-        return loanDao.fetchAllPersons();
+    public List<Loan> fetchAllLoan() {
+        return loanDao.fetchAllLoan();
     }
     @Override
         public Loan getLoanById(long id)  {

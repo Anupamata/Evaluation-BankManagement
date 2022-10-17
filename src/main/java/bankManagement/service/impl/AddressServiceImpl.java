@@ -2,7 +2,6 @@ package bankManagement.service.impl;
 
 import bankManagement.dao.AddressDao;
 import bankManagement.model.Address;
-import bankManagement.model.Customer;
 import bankManagement.service.AddressService;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -17,7 +16,12 @@ public class AddressServiceImpl implements AddressService {
         return optionalPersonModel.orElse(null);
     }
     @Override
-    public void insertPerson(Address address) {
-        addressDao.insertPerson(address);
+    public void insertNewAddress(Address address) {
+        addressDao.insertNewAddress(address);
+    }
+
+    @Override
+    public void deleteById(long id) {
+        addressDao.deleteById(id);
     }
 }

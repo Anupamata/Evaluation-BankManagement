@@ -6,16 +6,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-
 </head>
 <body>
-        <form action="/Evaluation/customer/save" method="post" modelAttribute="customer">
+    <form action="/Evaluation/customer/save" method="post" modelAttribute="customer">
     <div align="center">
         <h2>Your Current Balance</h2>
 your balance is : ${customer.balance}</BR>
-
-
 </form>
-         </div>
-        </body>
-        </html>
+</div>
+</body>
+</html>

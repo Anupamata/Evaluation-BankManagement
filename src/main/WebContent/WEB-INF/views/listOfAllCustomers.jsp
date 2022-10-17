@@ -27,7 +27,7 @@
             </c:forEach>
         </table>
 
-         </br><a href="http://localhost:8089/Evaluation/"><i>HOME</a></i>
+	                     </br><button onclick="history.back()"> Back</button>
 
     </div>
     </body>

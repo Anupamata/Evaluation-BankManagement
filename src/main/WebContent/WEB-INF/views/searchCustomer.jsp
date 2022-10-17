@@ -11,7 +11,8 @@
 <div align="center"><H3>Search for a Customer</h3>    <BR>
 
 Enter Customer ID: <input type="text" id="id"  >
-<button onclick='window.location ="/Evaluation/manager/searchResult?id="+document.getElementById("id").value'>GET </button>
+<button onclick='window.location ="/Evaluation/manager/searchResult?id="+document.getElementById("id").value'>GET </button><br>
+	                     </br><button onclick="history.back()"> Back</button>
     </div>
 </body>
 </html>

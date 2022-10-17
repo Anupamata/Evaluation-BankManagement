@@ -11,18 +11,19 @@
     <body>
     <center>
     <h2>
-    Welcome <i>${customer.custName}</i><br></h2>
+    Welcome <i>${manager.managerName}</i><br></h2>
    <form method="get"  action="/Evaluation/manager/getAllCustomers/${customer.customerId}"></br>
         <input style="height:50px;width:120px" type="submit"  value="View customers"/></form>
    <form method="get"  action="/Evaluation/manager/fetchById"></br>
         <input style="height:50px;width:120px" type="submit"  value="Search Customer"/></form>
    <form method="get"  action="/Evaluation/manager/newCustomer"></br>
         <input style="height:50px;width:120px" type="submit"  value="New Customer"/></form>
-
    <form method="get"  action="/Evaluation/manager/pendingLoan"></br>
         <input style="height:50px;width:120px" type="submit"  value="   Loan Details   "/></form>
-<br><br>
-    <a href="http://localhost:8080/Evaluation/customer/login"><i>HOME</i></a>
+   <form method="get"  action="/Evaluation/"></br>
+        <input style="height:50px;width:120px" type="submit"  value="   Log Out   "/></form>
+
+
     </center>
     </body>
     </html>

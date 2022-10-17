@@ -22,7 +22,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
     @Override
     public Customer getPersonById(long personId)  {
-        Optional<Customer> optionalPersonModel=customerDao.getPersonNameById(personId);
+        Optional<Customer> optionalPersonModel=customerDao.getPersonById(personId);
         return optionalPersonModel.orElse(null);
     }
     @Override
@@ -30,22 +30,4 @@ public class CustomerServiceImpl implements CustomerService {
         customerDao.insertPerson(customer);
         return customer;
     }
-    /*private void validatePerson(Customer customer) {
-        if(customer.getCustomerId() == 0)
-        {
-            throw new NullPointerException("Customer Id is empty in the request!");
-        }
-        if(customer.getCustName()==null)
-        {
-            throw new NullPointerException("Customer Name is empty in the request");
-        }
-        *//*if(customer.getAge()==0)
-        {
-            throw new NullPointerException("Person Age is empty in the request");
-        }
-        if(customer.getMobileNumber()==null)
-        {
-            throw new NullPointerException("Person Mobile Number is empty in the request");
-        }*//*
-    }*/
 }

@@ -54,9 +54,9 @@
                     <td colspan="2"><input type="submit" value="Save"></td>
                 </tr>
             </table>
-             <a href="/Evaluation/customer/editAddress?id=${customer.addressId}">EDIT MY ADDRESS</a>
+             <a href="/Evaluation/customer/editAddress?id=${customer.addressId}">Edit Address Details</a>
         </form:form>
-
+                     </br><button onclick="history.back()"> Back</button>
 
     </div>
 </body>

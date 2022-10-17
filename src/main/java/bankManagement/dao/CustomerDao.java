@@ -9,6 +9,6 @@ public interface CustomerDao {
     List<Customer> fetchAllPersons();
 
     Customer login(String username, String password);
-    Optional<Customer> getPersonNameById(long id);
+    Optional<Customer> getPersonById(long id);
     void insertPerson(Customer customer);
 }

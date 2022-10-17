@@ -21,7 +21,7 @@ public class CustomerDaoImpl implements CustomerDao {
         return customerRepository.login(username,password);
     }
     @Transactional
-    public Optional<Customer> getPersonNameById(long id) {
+    public Optional<Customer> getPersonById(long id) {
         return customerRepository.findById(id);
 
     }

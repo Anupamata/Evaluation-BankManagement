@@ -11,11 +11,10 @@
 <body>
     <div align="center">
         <h2>Add New Person</h2>
-        <form:form action="saveNewCustomer/${customer.addressId}" method="post" modelAttribute="customer">
+        <form:form action="/Evaluation/manager/saveNewCustomer" method="post" modelAttribute="customer">
             <table border="0" cellpadding="5">
 
                 <tr>
-                <form:hidden path="customerId" />
                     <td>Name: </td>
                     <td><form:input path="custName" /></td>
                 </tr>
@@ -35,12 +34,7 @@
                     <td>Balance: </td>
                     <td><form:input path="balance" /></td>
                 </tr>
-                <tr>
-                    <td>Address id: </td>
-                    <td>${customer.addressId}</td>
-                        <form:hidden path="addressId"/>
 
-                </tr>
                 <tr>
                     <td>gender: </td>
                     <td><form:input path="gender" /></td>
@@ -49,8 +43,8 @@
                     <td colspan="2"><input type="submit" value="Save"></td>
                 </tr>
             </table>
-                     </br><a href="http://localhost:8089/FruitStall/"><i>HOME</a></i>
-        </form:form>
+            </form:form>
+	       </br><button onclick="history.back()"> Back</button>
     </div>
 </body>
 </html>

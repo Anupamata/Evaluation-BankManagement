@@ -14,9 +14,8 @@
 
 your balance is : ${customer.balance}</br><br>
             Enter amount to withdraw : <input type="text" id="amount"><br>
-            </br><button onclick='window.location ="/Evaluation/customer/withdrawResult/${customer.customerId}/"+document.getElementById("amount").value'>OK </button>
-
-
+            </br><button onclick="history.back()"> Back</button>&nbsp;
+<button onclick='window.location ="/Evaluation/customer/withdrawResult/${customer.customerId}/"+document.getElementById("amount").value'>OK </button>
          </div>
         </body>
         </html>

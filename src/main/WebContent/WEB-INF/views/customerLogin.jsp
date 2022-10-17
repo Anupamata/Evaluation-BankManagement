@@ -16,8 +16,11 @@
 	                <label for="pwd">Password:  </label>
 	                <input type="password"  id="pwd" placeholder="Enter password" name="password"><br><br>
                     <input type="reset" value="Reset"/>&nbsp &nbsp
+                    
 	                 <button id="confirm_user" type="submit" >Login</button>
 	        </form>
+	         <br><button onclick="history.back()"> Back</button>&nbsp &nbsp
 	    </center>
+
 	</body>
 </html>

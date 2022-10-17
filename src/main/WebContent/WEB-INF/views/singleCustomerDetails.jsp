@@ -12,7 +12,7 @@
     <div align="center">
         <h2>Customer Details</h2>
         <form:form  method="post" modelAttribute="customer">
-            <table border="0" cellpadding="5">
+            <table border="1" cellpadding="5">
                 <tr>
                     <td>ID: </td>
                     <td>${customer.customerId}
@@ -53,7 +53,7 @@
 <h3>Address Details</h3>
         <form:form  method="post" modelAttribute="address">
 
-                    <table border="0" cellpadding="5">
+                    <table border="1" cellpadding="5">
 
                         <tr>
                             <td>House Name: </td>
@@ -74,8 +74,7 @@
 
                     </table>
                 </form:form>
+	</br><button onclick="history.back()"> Back</button></body>
 
     </div>
-     </br><a href="http://localhost:8080/Evaluation/customer/loginResult"><i>HOME</a></i>
-</body>
 </html>

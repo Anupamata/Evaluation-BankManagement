@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public interface LoanDao {
     void insertLoan(Loan loan);
-    List<Loan> getByCustomerId(long id);
-    List<Loan> fetchAllPersons();
+    List<Loan> getLoanByCustomerId(long id);
+    List<Loan> fetchAllLoan();
     Optional<Loan> getLoanById(long id);
 }

@@ -20,8 +20,11 @@
         <input style="height:50px;width:120px" type="submit"  value="Withdraw Money"/></form>
    <form method="get"  action="/Evaluation/customer/loanHome/${customer.customerId}"></br>
         <input style="height:50px;width:120px" type="submit"  value="   Loan Details   "/></form>
+   <form method="get"  action="/Evaluation/"></br>
+        <input style="height:50px;width:120px" type="submit"  value="   Log Out   "/></form>
+
 <br><br>
-    <a href="http://localhost:8080/Evaluation/customer/login"><i>HOME</i></a>
+
     </center>
     </body>
     </html>

@@ -18,7 +18,12 @@ public class AddressDaoImpl implements AddressDao {
 
     }
     @Transactional
-    public void  insertPerson(Address address) {
+    public void insertNewAddress(Address address) {
         addressRepository.save(address);
+    }
+
+    @Override
+    public void deleteById(long id) {
+        addressRepository.deleteById(id);
     }
 }
